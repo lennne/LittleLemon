@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 export default function LittleLemonHeader() {
   return (
-    <View style={{ flex: 0.15, backgroundColor: '#F4CE14' }}>
+    <View style={{ flex: 0.1, backgroundColor: '#F4CE14' }}>
       <Text
         style={{
-          padding: 40,
           fontSize: 30,
           color: 'white',
           textAlign: 'center',
