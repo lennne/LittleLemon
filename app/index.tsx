@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import LittleLemonFooter from '@/components/LittleLemonFooter';
 import LittleLemonHeader from '@/components/LittleLemonHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,7 +9,10 @@ import MenuItems from '@/components/MenuItems';
 
 export default function HomeScreen() {
   return (
-   <SafeAreaView style={{flex:1}}>
+   <SafeAreaView  style={{flex:1}}>
+    <ScrollView indicatorStyle={"white"}>
+
+    
    <View style={styles.container}>
     <LittleLemonHeader />
       <Text style={styles.header}>Welcome to Little Lemon</Text>
@@ -18,11 +21,11 @@ export default function HomeScreen() {
       Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
     </Text>
     </View>
-    <MenuItems />
      
     <View>
     <LittleLemonFooter />
     </View>
+   </ScrollView>
    </SafeAreaView>
   );
 }
@@ -34,7 +37,7 @@ const styles = StyleSheet.create({
   },
   header: {
           padding: 40,
-          fontSize: 30,
+          fontSize: 50,
           color: '#EDEFEE',
           textAlign: 'center',
   },
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   subHeading: {
-    fontSize: 24,
+    fontSize: 38,
           padding: 20,
           marginVertical: 8,
           color: '#EDEFEE',
