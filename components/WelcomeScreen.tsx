@@ -1,33 +1,41 @@
 import { useRef, useState } from "react";
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Alert } from "react-native";
 
 export default function WelcomeScreen(){
   const refFirstName = useRef(null);
-  const [firstName, onChangeFirstName] = useState('')
-  
+  const [firstName, onChangeFirstName] = useState('');
+  const [password, onChangePassword] = useState('');
     return(
             <ScrollView style={{flex: 1}} contentContainerStyle={{flexGrow: 1}} keyboardDismissMode="on-drag">
               <Text style={styles.headerText}>Welcome to Little Lemon</Text>
             <Text style={styles.regularText}>
-              Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
+              Login to continue
             </Text>
+            
+             <TextInput
+             style={styles.inputBox}
+             placeholder={'email'}
+             value={firstName}
+             onChangeText={onChangeFirstName}
+             keyboardType="email-address"
+             onBlur={()=>{Alert.alert("First name is now blurred")}}
+             />
 
              <TextInput
              style={styles.inputBox}
-             placeholder={'First Name'}
-             value={firstName}
-             onChangeText={onChangeFirstName}
+             placeholder={'password'}
+             value={password}
+             onChangeText={onChangePassword}
              keyboardType="default"
+             secureTextEntry={true}
              />
           </ScrollView>
     )
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#443221'
   },
   headerText: {
     padding: 40,
@@ -43,8 +51,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   inputBox: {
-    paddingBottom: 10,
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
     fontSize: 16,
+    borderColor: '#EDEFEE',
     backgroundColor: '#EDEFEE',
   },
 });

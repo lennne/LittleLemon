@@ -16,7 +16,7 @@ export default function HomeScreen() {
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
           <View style={{flex: 1, backgroundColor: "#123232"}}>
               <LittleLemonHeader /> 
-                <WelcomeScreen />
+                <MenuItems />
           </View>
           <View style={{justifyContent:"flex-end"}}>
               <LittleLemonFooter />

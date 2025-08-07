@@ -1,4 +1,5 @@
-import { SectionList, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, SectionList, StyleSheet, Text, View } from "react-native";
 
 const menuItemsToDisplay = [
   {
@@ -65,16 +66,27 @@ const SectionHeader = ({ section: {title} }: ItemHeader) => (
 )
 
 export default function MenuItems (){
+    const [showMenu, onChangeShowMenu] = useState(false);
     const renderItem = ({item} : {item: ItemProps}) => <Item name={item.name} price={item.price} />
     return (
         <View style={menuStyles.container}>
-            <SectionList
+          {!showMenu && <Text style={menuStyles.introductoryText}>Little Lemon is aharming neighborhood bistro that sserves simple food and classic cocktails in a lively but casual environment. View our menu to explore our cuisine with daily specials</Text>}
+          <Pressable 
+          onPress={() => onChangeShowMenu(true)}
+          style={menuStyles.button}
+          >
+            <Text style={{fontSize: 22, textAlign: "center"}}>
+            View Menu
+          </Text>
+          </Pressable>
+          
+            {showMenu && <SectionList
                 sections={menuItemsToDisplay}
                 keyExtractor={(item, index) => item.name + index}
                 renderItem={renderItem}
                 renderSectionHeader={SectionHeader}
         >
-            </SectionList>
+            </SectionList>}
         </View>
     )
 }
@@ -97,9 +109,28 @@ const menuStyles = StyleSheet.create({
     backgroundColor: '#F4CE14',
   },
   sectionHeader: {
+    backgroundColor: 'white',
     color: 'black',
     fontSize: 26,
     flexWrap: 'wrap',
     textAlign: 'center',
   },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor:'#EDEFEE',
+    borderColor: '#EDEFEE',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginBottom:20
+  },
+  introductoryText: {
+    color: "#EDEFEE",
+    fontSize: 22,
+    textAlign: "center",
+    paddingTop: 20
+    
+  }
 });
