@@ -13,7 +13,7 @@ export default function HomeScreen() {
    <SafeAreaView style={{flex: 1}}>   
    <View style={styles.container}>
     <LittleLemonHeader />
-    <MenuItems />
+    <WelcomeScreen />
     </View>
      
     <View style={styles.footer}>
