@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#EE9972',
     },
     text: {
-        padding: 40,
         fontSize: 30,
         color: 'black',
         textAlign: 'center'

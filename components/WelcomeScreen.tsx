@@ -1,28 +1,25 @@
 import { useRef, useState } from "react";
-import { ScrollView, View, Text, StyleSheet, TextInput } from "react-native";
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from "react-native";
 
 export default function WelcomeScreen(){
   const refFirstName = useRef(null);
   const [firstName, onChangeFirstName] = useState('')
   
     return(
-            <ScrollView style={styles.container}>
+            <ScrollView style={{flex: 1}} contentContainerStyle={{flexGrow: 1}} keyboardDismissMode="on-drag">
               <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-        
             <Text style={styles.regularText}>
               Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
             </Text>
+
              <TextInput
-             ref={refFirstName}
              style={styles.inputBox}
              placeholder={'First Name'}
              value={firstName}
              onChangeText={onChangeFirstName}
-             >
-
-             </TextInput>
+             keyboardType="default"
+             />
           </ScrollView>
-        
     )
 }
 
@@ -30,6 +27,7 @@ export default function WelcomeScreen(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#443221'
   },
   headerText: {
     padding: 40,
@@ -45,12 +43,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   inputBox: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+    paddingBottom: 10,
     fontSize: 16,
-    borderColor: 'EDEFEE',
     backgroundColor: '#EDEFEE',
   },
 });
