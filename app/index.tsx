@@ -3,6 +3,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import LittleLemonFooter from '@/components/LittleLemonFooter';
 import LittleLemonHeader from '@/components/LittleLemonHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import MenuItems from '@/components/MenuItems';
 
 
 
@@ -17,6 +18,7 @@ export default function HomeScreen() {
       Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
     </Text>
     </View>
+    <MenuItems />
      
     <View>
     <LittleLemonFooter />
