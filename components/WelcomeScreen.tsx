@@ -1,62 +1,39 @@
 import { useRef, useState } from "react";
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Alert } from "react-native";
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Alert, View, Image } from "react-native";
 
 export default function WelcomeScreen(){
   const refFirstName = useRef(null);
   const [firstName, onChangeFirstName] = useState('');
   const [password, onChangePassword] = useState('');
     return(
-            <ScrollView style={{flex: 1}} contentContainerStyle={{flexGrow: 1}} keyboardDismissMode="on-drag">
-              <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-            <Text style={styles.regularText}>
-              Login to continue
+            <View style={styles.container} >
+            <Image style={styles.logo} source={require('../assets/images/little_lemon_logo.png')} />
+            <Text>
+              Little Lemon, your local Mediterranean Bistro
             </Text>
-            
-             <TextInput
-             style={styles.inputBox}
-             placeholder={'email'}
-             value={firstName}
-             onChangeText={onChangeFirstName}
-             keyboardType="email-address"
-             onBlur={()=>{Alert.alert("First name is now blurred")}}
-             />
-
-             <TextInput
-             style={styles.inputBox}
-             placeholder={'password'}
-             value={password}
-             onChangeText={onChangePassword}
-             keyboardType="default"
-             secureTextEntry={true}
-             />
-          </ScrollView>
+          </View>
     )
 }
 
 const styles = StyleSheet.create({
+  logo: {
+     height: 100,
+     width: 300,
+     resizeMode: 'contain',
+  },
   container: {
     flex: 1,
+    padding: 24,
+    marginTop: 25,
+    backgroundColor: '#fff',
   },
-  headerText: {
-    padding: 40,
-    fontSize: 30,
-    color: '#EDEFEE',
+
+  title: {
+    marginTop: 16,
+    paddingVertical: 10,
+    color: '#333333',
     textAlign: 'center',
-  },
-  regularText: {
-    fontSize: 24,
-    padding: 20,
-    marginVertical: 8,
-    color: '#EDEFEE',
-    textAlign: 'center',
-  },
-  inputBox: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    fontSize: 16,
-    borderColor: '#EDEFEE',
-    backgroundColor: '#EDEFEE',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });

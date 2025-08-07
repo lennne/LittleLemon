@@ -70,9 +70,9 @@ export default function MenuItems (){
     const renderItem = ({item} : {item: ItemProps}) => <Item name={item.name} price={item.price} />
     return (
         <View style={menuStyles.container}>
-          {!showMenu && <Text style={menuStyles.introductoryText}>Little Lemon is aharming neighborhood bistro that sserves simple food and classic cocktails in a lively but casual environment. View our menu to explore our cuisine with daily specials</Text>}
+          {!showMenu && (<Text style={menuStyles.introductoryText}>Little Lemon is aharming neighborhood bistro that sserves simple food and classic cocktails in a lively but casual environment. View our menu to explore our cuisine with daily specials</Text>)}
           <Pressable 
-          onPress={() => onChangeShowMenu(true)}
+          onPress={() => onChangeShowMenu(!showMenu)}
           style={menuStyles.button}
           >
             <Text style={{fontSize: 22, textAlign: "center"}}>
@@ -80,13 +80,13 @@ export default function MenuItems (){
           </Text>
           </Pressable>
           
-            {showMenu && <SectionList
+            {showMenu && (<SectionList
                 sections={menuItemsToDisplay}
                 keyExtractor={(item, index) => item.name + index}
                 renderItem={renderItem}
                 renderSectionHeader={SectionHeader}
         >
-            </SectionList>}
+            </SectionList>)}
         </View>
     )
 }

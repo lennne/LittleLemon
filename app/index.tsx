@@ -1,5 +1,5 @@
 import { Image } from 'expo-image';
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, useColorScheme, View } from 'react-native';
 import LittleLemonFooter from '@/components/LittleLemonFooter';
 import LittleLemonHeader from '@/components/LittleLemonHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,13 +10,18 @@ import MenuItems from '@/components/MenuItems';
 
 
 export default function HomeScreen() {
+  const colorScheme = useColorScheme();
   return (
     
-   <SafeAreaView style={{flex: 1, backgroundColor: "#3334ab"}}>   
-      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
+   <SafeAreaView style={[{flex: 1, backgroundColor: "#3334ab"},  colorScheme === 'light' ? {backgroundColor: "#fff" } :  {backgroundColor: "#333333"}]}>   
+      <KeyboardAvoidingView style={[
+        styles.container, 
+       
+
+      ]} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
           <View style={{flex: 1, backgroundColor: "#123232"}}>
               <LittleLemonHeader /> 
-                <MenuItems />
+               <WelcomeScreen />
           </View>
           <View style={{justifyContent:"flex-end"}}>
               <LittleLemonFooter />
