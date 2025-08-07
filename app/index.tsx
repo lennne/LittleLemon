@@ -10,7 +10,7 @@ import MenuItems from '@/components/MenuItems';
 
 export default function HomeScreen() {
   return (
-   <SafeAreaView  style={{flex:1}}>    
+   <SafeAreaView style={{flex: 1}}>   
    <View style={styles.container}>
     <LittleLemonHeader />
     <MenuItems />
