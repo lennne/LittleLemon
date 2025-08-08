@@ -7,10 +7,10 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
+export default function ScreensLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
   if (!loaded) {
@@ -22,7 +22,8 @@ export default function TabLayout() {
   <SafeAreaProvider  >
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+        <Stack.Screen name="menuscreen" options={{headerShown: false}} />
+        <Stack.Screen name="welcomescreen" options={{headerShown: false}} />
       </Stack>
     </ThemeProvider>
    </SafeAreaProvider>

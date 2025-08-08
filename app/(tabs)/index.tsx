@@ -17,8 +17,6 @@ export default function HomeScreen() {
    <SafeAreaView style={[{flex: 1, backgroundColor: "#3334ab"},  colorScheme === 'light' ? {backgroundColor: "#fff" } :  {backgroundColor: "#333333"}]}>   
       <KeyboardAvoidingView style={[
         styles.container, 
-       
-
       ]} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
           <View style={{flex: 1, backgroundColor: "#123232"}}>
               <LittleLemonHeader /> 

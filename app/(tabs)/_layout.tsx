@@ -10,7 +10,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 export default function TabLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
   if (!loaded) {
@@ -19,12 +19,9 @@ export default function TabLayout() {
   }
 
   return (
-  <SafeAreaProvider  >
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{headerShown: false}} />
-      </Stack>
-    </ThemeProvider>
-   </SafeAreaProvider>
+       <Tabs>
+        <Tabs.Screen name="index" options={{headerShown: false}}/>
+        <Tabs.Screen name="settings" options={{headerShown: false}}/>
+      </Tabs>
   );
 }
