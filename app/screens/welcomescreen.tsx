@@ -7,7 +7,7 @@ export default function WelcomeScreen(){
   const [password, onChangePassword] = useState('');
     return(
             <View style={styles.container} >
-            <Image style={styles.logo} source={require('../assets/images/little_lemon_logo.png')} />
+            <Image style={styles.logo} source={require('../../assets/images/little_lemon_logo.png')} />
             <Text>
               Little Lemon, your local Mediterranean Bistro
             </Text>

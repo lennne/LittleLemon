@@ -1,16 +1,17 @@
 import { Image } from 'expo-image';
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, useColorScheme, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, useColorScheme, View } from 'react-native';
 import LittleLemonFooter from '@/components/LittleLemonFooter';
 import LittleLemonHeader from '@/components/LittleLemonHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import WelcomeScreen from '@/components/WelcomeScreen';
 import MenuItems from '@/components/MenuItems';
-
+import { router } from 'expo-router';
 
 
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
+  const exporouter = router;
+
   return (
     
    <SafeAreaView style={[{flex: 1, backgroundColor: "#3334ab"},  colorScheme === 'light' ? {backgroundColor: "#fff" } :  {backgroundColor: "#333333"}]}>   
@@ -21,8 +22,10 @@ export default function HomeScreen() {
       ]} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
           <View style={{flex: 1, backgroundColor: "#123232"}}>
               <LittleLemonHeader /> 
-               <WelcomeScreen />
           </View>
+          <Pressable onPress={() => router.navigate('/screens/welcomescreen')}>
+            <Text >Click me</Text>
+            </Pressable>
           <View style={{justifyContent:"flex-end"}}>
               <LittleLemonFooter />
           </View>

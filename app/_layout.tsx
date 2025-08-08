@@ -24,6 +24,8 @@ export default function RootLayout() {
       
       <Stack>
         <Stack.Screen name="index" options={{headerShown: false}}/>
+        <Stack.Screen name="screens/menuscreen" options={{headerShown: false}}/>
+        <Stack.Screen name="screens/welcomescreen" options={{headerShown: false}}/>
       </Stack>
     </ThemeProvider>
    </SafeAreaProvider>
