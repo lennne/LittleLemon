@@ -19,10 +19,10 @@ export default function TabLayout() {
   }
 
   return (
-  <SafeAreaProvider  >
+  <SafeAreaProvider>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="menu" options={{headerShown: false}} />
+      <Stack screenOptions={{headerShown: false}}>
+        <Stack.Screen name="index" options={{headerShown: false}} />
       </Stack>
     </ThemeProvider>
    </SafeAreaProvider>

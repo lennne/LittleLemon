@@ -20,9 +20,8 @@ export default function DrawerLayout() {
   return (
     <>
     <View style={{flex:1}}>
-      <Drawer screenOptions={{drawerStyle: {height:500, marginTop: Constants.statusBarHeight }}}>
+      <Drawer >
           <Drawer.Screen name='profile' />
-          <Drawer.Screen name='(tabs)' />
       </Drawer>
       
       </View>

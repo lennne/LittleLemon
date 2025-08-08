@@ -21,7 +21,7 @@ export default function HomeScreen() {
           <View style={{flex: 1, backgroundColor: "#123232"}}>
               <LittleLemonHeader /> 
           </View>
-          <Pressable onPress={() => router.navigate('/screens/welcomescreen')}>
+          <Pressable onPress={() => router.navigate('/menu/profile')}>
             <Text >Click me</Text>
             </Pressable>
           <View style={{justifyContent:"flex-end"}}>

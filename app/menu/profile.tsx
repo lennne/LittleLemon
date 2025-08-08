@@ -1,7 +1,12 @@
-import { Text } from "react-native";
+import Example from "@/components/Example";
+import { router } from "expo-router";
+import { Pressable, Text } from "react-native";
 
 export default function profile(){
     return <>
-        <Text>Hello world</Text>
+    <Pressable onPress={() => router.navigate('/(tabs)/settings')}>
+<Text>Hello world</Text>
+    </Pressable>
+        
     </>
 }
