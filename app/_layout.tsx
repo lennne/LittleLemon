@@ -22,7 +22,7 @@ export default function TabLayout() {
   <SafeAreaProvider  >
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+        <Stack.Screen name="menu" options={{headerShown: false}} />
       </Stack>
     </ThemeProvider>
    </SafeAreaProvider>
